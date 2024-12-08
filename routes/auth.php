@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Login;
+use App\Livewire\Register;
 
 
-    // route::get('register', 'pages.auth.register')->name('register');
+    route::get('/register', Register::class)->name('register');
 
-    // route::get('login', 'auth.login')->name('login');
+    route::get('/login', Login::class)->name('login');
 
     // route::post('forgot-password', 'pages.auth.forgot-password')->name('password.request');
 
