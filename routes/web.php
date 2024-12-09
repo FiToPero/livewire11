@@ -1,15 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomController;
 
-Route::view('/', 'welcome');
+Route::get('/', [WelcomController::class, 'index'])->name('welcome');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::get('dashboard', [WelcomController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
+Route::get('profile', [WelcomController::class, 'profile'])->middleware(['auth'])->name('profile');
 
 require __DIR__.'/auth.php';
